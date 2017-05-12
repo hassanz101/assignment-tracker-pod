@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="scripts/client.js" charset="utf-8"></script>
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/vendors/bootstrp-theme.min.css">
+  <link rel="stylesheet" href="views/style.css">
+
+  </script>
+  <title>Assignment Tracker</title>
+</head>
+
+<body ng-app="myApp">
+  <h1>Assignment Tracker</h1>
+
+  <div ng-controller="AssignmentInputs as ai" ng init="">
+    <input type="text" value="" , ng-model="ai.assignName" placeholder="Assignment">
+    <input type="text" value="" , ng-model="ai.studentName" placeholder="Student Name">
+    <input type="number" value="" , ng-model="ai.score" placeholder="Score">
+    <input type="text" value="" , ng-model="ai.dateComp" placeholder="Date Completed">
+    <button ng-click="">Submit</button>
+  </div <div ng-controller="AssignmentOutput as ao" ng init="">
+  <div class="container row">
+    <div ng-repeat="" class="col-sm-3">
+      <h3>Past Assignments</h3> {{fill me}}
+    </div>
+  </div>
+</body>
+
+</html>
