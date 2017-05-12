@@ -14,5 +14,5 @@ var ourSchema = mongoose.Schema({
 //make schema collection
 var ourAssignments = mongoose.model('ourAssignments', ourSchema);
 
-
+//send the model to server.js
 module.exports = ourAssignments;
