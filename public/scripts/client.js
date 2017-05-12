@@ -26,8 +26,15 @@ myApp.controller('AssignmentInputs', function($http) {
     });
   };
 
-// vm.getAssignments = function(){
-//   console.log('in getAssignments ->');
-
-// };
+vm.getAssignments = function(){
+  console.log('in getAssignments ->');
+  $http({
+    method: 'GET',
+    url: '/assignments',
+  }).then(function success(response){
+    console.log('this is the response', response);
+    vm.getInfo = response.data;
+    console.log('in vm response ->',response.data);
+  });//success
+};
 }); //end controller

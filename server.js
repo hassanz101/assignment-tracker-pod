@@ -25,6 +25,13 @@ app.post('/assignments', function(req, res){
 
 });
 
+app.get('/assignments', function(req, res){
+  console.log('in get assignments');
+  assignments.find().then(function(data){
+    res.send(data);
+  });
+});
+
 app.get('/', function(req, res){
   console.log('base url hit', path.resolve ('public/views/index.html'));
   res.sendFile(path.resolve('public/views/index.html'));
