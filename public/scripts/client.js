@@ -5,6 +5,7 @@ var myApp = angular.module('myApp', []);
 myApp.controller('AssignmentInputs', function($http) {
   //variable global to this controller
   var vm = this;
+  vm.assignmentArray = [];
 
   vm.postAssignments = function() {
     console.log('in postAssignments ng-click');
@@ -23,6 +24,7 @@ myApp.controller('AssignmentInputs', function($http) {
       data: objectToSend
     }).then(function(response) {
       console.log('back from server ->', response);
+      vm.getAssignments();
     });
   };
 
@@ -33,8 +35,9 @@ vm.getAssignments = function(){
     url: '/assignments',
   }).then(function success(response){
     console.log('this is the response', response);
-    vm.getInfo = response.data;
+    vm.assignmentArray = response.data;
     console.log('in vm response ->',response.data);
+    console.log(vm.assignmentArray);
   });//success
 };
 }); //end controller

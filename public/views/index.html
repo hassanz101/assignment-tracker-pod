@@ -21,14 +21,16 @@
     <input type="number" value="" , ng-model="ai.score" placeholder="Score">
     <input type="text" value="" , ng-model="ai.dateComp" placeholder="Date Completed">
     <button ng-click="ai.postAssignments()">Submit</button>
-  </div>
+
    <!-- <div ng-controller="AssignmentOutput as ao" ng init=""> -->
-  <div class="container row">
-    <div class="col-sm-3">
-      <h3>Past Assignments</h3>
-      {{ai.getInfo}}
+  <div class="container row" >
+    <h3>Past Assignments</h3>
+    <!-- {{ai.assignmentArray}} -->
+    <div class="col-sm-3" ng-repeat="thing in ai.assignmentArray">
+      <p>{{thing.assignment}} {{thing.student}} {{thing.score}} {{thing.date}}</p>
     </div>
   </div>
+</div>
 <!-- </div> -->
 </body>
 
